@@ -1,0 +1,22 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Adding new project</legend>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="inputTitle" class="col-lg-2 control-label">Title: </label>
+                <div class="col-lg-10">
+                    <input type="text" name="title" class="form-control" id="inputTitle" value="Please enter title ...">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBody" class="col-lg-2 control-label">Body: </label>
+                <div class="col-lg-10">
+                    <textarea name="body" class="form-control" id="inputBody" rows="5" >Please enter body ...</textarea>
+                </div>
+            </div>
+            <button class="btn btn-primary" {{action "newProject" }}>Add new project!</button>
+        </form>
+        {{outlet}}
+    </fieldset>
+</form>

@@ -1,0 +1,15 @@
+body {
+    padding-top: 70px;
+}
+
+nav .active {
+    font-weight: bold;
+}
+
+.muted {
+    opacity: 0.5;
+}
+
+.divider {
+    margin: 10px 0px;
+}

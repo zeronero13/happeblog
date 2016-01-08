@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <h2 class="page-header">
+        List of my projects
+        <small></small>
+    </h2>
+    {{#each model.projects as |project|}}
+        <div class="entry-post" style="margin-bottom: 36px;">
+                <div class="entry-header" style="position: relative;">
+                    {{#link-to "projects.project" project.id}}
+                        <p><h3>{{project.title}}</h3></p>
+                    {{/link-to}}
+                    <p>
+                        Created at
+                        <span style="font-size: 14px;opacity: 0.4;">
+                        {{project.createdAt}}
+                        </span>
+                    </p>
+                </div>
+                <p>{{truncate project.body limit=512}}</p>
+
+                <div class="entry-foot"></div>
+
+        </div>
+    {{/each}}
+
+    {{outlet}}
+</div>

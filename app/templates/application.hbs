@@ -1,3 +1,33 @@
-<h2 id="title">Welcome to Ember</h2>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {{#link-to "index" class="navbar-brand"}}Ember Blog{{/link-to}}
+        </div>
 
-{{outlet}}
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                {{#bs-dropdown tagName="li"}}
+                    {{#bs-dropdown-toggle}}Projects <span class="caret"></span>{{/bs-dropdown-toggle}}
+                    {{#bs-dropdown-menu}}
+                        {{#each model.projects as |project|}}
+                          <li>{{#link-to "projects.project" project.id}}<h4>{{project.title}}</h4>{{/link-to}}</li>
+                        {{/each}}
+                    {{/bs-dropdown-menu}}
+                 {{/bs-dropdown}}
+                <li>{{#link-to "about"}}About{{/link-to}}</li>
+                <li>{{#link-to "projects.list"}}List.Projects{{/link-to}}</li>
+                <li>{{#link-to "projects.new"}}AddNew.Project{{/link-to}}</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    {{outlet}}
+</div>

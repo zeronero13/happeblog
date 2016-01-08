@@ -1,0 +1,41 @@
+<h1>{{model.title}}</h1>
+
+<h3>
+    <small class="muted">Posted on <span class="muted">{{format-date model.createdAt}}</span>
+    </small>
+    {{#if isEditing}}
+        <button class="btn btn-success" {{action "doneEditing" model.id}}>Done</button>
+    {{else}}
+        <button class="btn btn-primary" {{action "edit" model.id}}>Edit info</button>
+    {{/if}}
+    {{#link-to "posts.new" model.id}}<button class="btn btn-success">New post</button>{{/link-to}}
+</h3>
+
+<hr />
+
+<div class="body">
+    {{#if isEditing}}
+        <div>
+            {{input type="text" class="form-control" name="title" value=model.title placeholder="Enter title..."}}
+        </div>
+        <div class="divider"></div>
+        <div>
+            {{textarea class="form-control" name="body" value=model.body placeholder="Enter body..."}}
+        </div>
+        <div class="divider"></div>
+    {{else}}
+        {{format-markdown model.body}}
+    {{/if}}
+    
+    <h3>Chapters: </h3>
+    <ul class="list-unstyled">
+    {{#each model.posts as |post|}}
+        <li>
+            <button class="btn btn-danger btn-xs" {{action "deletePost" post model}} >Delete</button>
+            {{#link-to "posts.post" post.id}}
+                {{post.title}}
+            {{/link-to}}
+        </li>
+    {{/each}}
+    </ul>
+</div>

@@ -1,0 +1,22 @@
+<h1>{{model.title}}</h1>
+
+<h3>
+    <small class="muted">Posted on <span class="muted">{{format-date model.date}}</span>
+        by {{model.author.name}}
+    </small>
+    {{#if isEditing}}
+        <button class="btn btn-success" {{action "doneEditing" model.id}}>Done</button>
+    {{else}}
+        <button class="btn btn-primary" {{action "edit" model.id}}>Edit</button>
+    {{/if}}
+</h3>
+
+<hr />
+
+<div class="body">
+    {{#if isEditing}}
+        {{partial "posts/post/edit"}}
+    {{else}}
+        {{format-markdown model.body}}
+    {{/if}}
+</div>

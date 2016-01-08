@@ -1,0 +1,29 @@
+<div class="col-md-8">
+    {{#each model.posts as |post|}}
+        <div class="entry-post" style="margin-bottom: 36px;">
+                <div class="entry-header" style="position: relative;">
+                    {{#link-to "posts.post" post}}
+                        <p><h3>{{post.title}}</h3></p>
+                    {{/link-to}}
+                    <p>
+                        Posted on
+                        <span style="font-size: 14px;opacity: 0.4;">
+                        {{post.createdAt}}
+                        </span>
+                        <span style="font-size: 14px;opacity: 0.2;">
+                            by (post.author.name)
+                        </span>
+                    </p>
+                </div>
+                <p>{{post.head}}</p>
+
+                <div class="entry-foot"></div>
+
+        </div>
+    {{/each}}
+
+    {{outlet}}
+</div>
+<div class="col-md-4">
+    {{recent-posts model=model}}
+</div>

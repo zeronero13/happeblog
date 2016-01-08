@@ -1,0 +1,28 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Posting new chapter</legend>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="inputTitle" class="col-lg-2 control-label">Title: </label>
+                <div class="col-lg-10">
+                    <input type="text" name="title" class="form-control" id="inputTitle" value="Please enter title ...">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputHead" class="col-lg-2 control-label">Header: </label>
+                <div class="col-lg-10">
+                    <textarea name="head" class="form-control" id="inputHead" rows="5" >Please enter header ...</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBody" class="col-lg-2 control-label">Body: </label>
+                <div class="col-lg-10">
+                    <textarea name="body" class="form-control" id="inputBody" rows="8" >Please enter body ...</textarea>
+                </div>
+            </div>
+            <button class="btn btn-primary" {{action "newPost" model.projectid}}>Post it!</button>
+        </form>
+        {{outlet}}
+    </fieldset>
+</form>
