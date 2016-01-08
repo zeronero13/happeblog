@@ -43,7 +43,7 @@ Kategóriákon belül új bejegyzéseket létrehozni, szerkeszteni, törölni.
 
 ## Tervezés
 
-### + Architektúra terv
+### Architektúra terv
 
 - Oldaltérkép
     
@@ -64,7 +64,7 @@ Kategóriákon belül új bejegyzéseket létrehozni, szerkeszteni, törölni.
     + /projects/project/:id :Projekt megtekintése
     + /projects/new/ :Új projekt felvétele
         
-### + Felhasználóifelület-modell 
+### Felhasználóifelület-modell 
 
 - Oldalvázlatok
     * Mockup index oldalról (public/doc/index_mockup.jpg)
@@ -81,9 +81,9 @@ Kategóriákon belül új bejegyzéseket létrehozni, szerkeszteni, törölni.
     * Adatbázisterv (public/doc/database.png)
 ![Adatbázisterv](public/doc/database.png)
     
-### + Dinamikus működés
-    - Szekvenciadiagram
-    
+### Dinamikus működés
+
+- Szekvenciadiagram
     * Egy 'post' törlése sikeresen (public/doc/seq_deleting_post_from_store.jpg)
 ![Egy 'post' törlése sikeresen](public/doc/seq_deleting_post_from_store.jpg)
 
@@ -128,16 +128,16 @@ Oldalon használt stíluslapok .css
 Sablonok .hbs fájlok
 
 ## Tesztelés
-
+-
 ### Tesztelés (Running Tests)
 
 * `ember test`
 * `ember test --server`
 
 ### Egység tesztelés
-
+-
 ### Funkciónális teszt
-
+-
 ## Felhasználói dokumentáció
 
 ### Szükséges előfeltételek (Prerequisites)
@@ -152,7 +152,7 @@ You will need the following things properly installed on your computer.
 
 
 **Database**
-*
+* Happeblog-api app. által, Fortune,fortune-nedb,fortune-json-api segítségével (szerveroldali perzisztálás fájlba)
 
 ### Telepítés (Installation)
 
